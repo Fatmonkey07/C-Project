@@ -1,0 +1,40 @@
+
+#include <iostream>
+#include <random>
+#include <stdlib.h>
+
+using namespace std;
+
+int main()
+{
+    cout<<  "Welcome to word pyramid. " <<
+    "The final version of this project will start at a three letter word " <<
+    "and go up one letter every round like a pyramid. " <<
+    "The player is given one letter of the word at a time" <<
+    "and must guess where that letter goes in the word until they " <<
+    "find the full word or run out of guesses. This current version of" <<
+    " the game prototypes this concept using one four letter word." <<
+    " This current version only takes letters from one word and asks where" <<
+    " they go. It does not currently keep track of what letters have been" <<
+    " found or the number of guesses used.";
+
+    string word = "word";
+    int guess;
+    int chosen_letter;
+    bool playing = true;
+
+    while (playing == true) {
+
+        chosen_letter = (rand() % 4);
+
+        cout << endl << "guess where " << word[chosen_letter] << " goes." << endl;
+        cout << "Enter a number between 1 and 4: ";
+
+        cin >> guess;
+
+        if (guess == (chosen_letter + 1)) {
+            cout << endl << "Correct";
+        } else cout << endl << "Incorrect";
+    }
+    return 0;
+}
